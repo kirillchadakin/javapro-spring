@@ -11,10 +11,7 @@ import javax.sql.DataSource;
 public class DataSourceConfig {
     @Bean
     public DataSource dataSource() {
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:postgresql://localhost:5432/postgres");
-        config.setUsername("postgres");
-        config.setPassword("postgres");
+        HikariConfig config = new HikariConfig("datasource.properties");
         return new HikariDataSource(config);
     }
 }

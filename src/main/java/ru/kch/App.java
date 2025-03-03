@@ -2,12 +2,14 @@ package ru.kch;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import ru.kch.model.User;
 import ru.kch.service.UserService;
 
+@ComponentScan
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext("ru.kch");
+        ApplicationContext context = new AnnotationConfigApplicationContext(App.class);
         UserService userService = context.getBean(UserService.class);
 
         // Create and save a new user
