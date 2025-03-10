@@ -44,22 +44,13 @@
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-maven-plugin</artifactId>
       <version>10.8.1</version>
-      <configuration>
-        <url>jdbc:postgresql://127.0.0.1:5432/postgres</url>
-        <user>postgres</user>
-        <password>postgres</password>
-        <cleanDisabled>false</cleanDisabled>
-        <schemas>
-          <schema>public</schema>
-        </schemas>
-      </configuration>
-        <dependencies>
-          <dependency>
-            <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-database-postgresql</artifactId>
-            <version>10.8.1</version>
-          </dependency>
-        </dependencies>
+      <dependencies>
+        <dependency>
+          <groupId>org.flywaydb</groupId>
+          <artifactId>flyway-database-postgresql</artifactId>
+          <version>10.8.1</version>
+        </dependency>
+      </dependencies>
     </plugin>
     </plugins>
   </build>
