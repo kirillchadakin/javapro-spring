@@ -1,4 +1,4 @@
-INSERT INTO user_table (username)
+INSERT INTO users (username)
 VALUES
     ('Alice'),
     ('Bob'),
