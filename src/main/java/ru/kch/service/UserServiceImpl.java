@@ -1,8 +1,8 @@
 package ru.kch.service;
 
 import org.springframework.stereotype.Service;
-import ru.kch.dao.UserDao;
 import ru.kch.model.User;
+import ru.kch.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,29 +10,29 @@ import java.util.Optional;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final UserDao userDao;
+    private final UserRepository userRepository;
 
-    public UserServiceImpl(UserDao userDao) {
-        this.userDao = userDao;
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override
     public void createUser(User user) {
-        userDao.save(user);
+        userRepository.save(user);
     }
 
     @Override
     public void deleteUser(User user) {
-        userDao.deleteById(user.getId());
+        userRepository.deleteById(user.getId());
     }
 
     @Override
     public Optional<User> findUserById(Long id) {
-        return userDao.findById(id);
+        return userRepository.findById(id);
     }
 
     @Override
     public List<User> findAll() {
-        return userDao.findAll();
+        return userRepository.findAll();
     }
 }
