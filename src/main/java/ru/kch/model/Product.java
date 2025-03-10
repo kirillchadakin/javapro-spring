@@ -10,14 +10,23 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "products")
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     Long id;
 
-    @Column(name = "username")
-    String username;
-}
+    @Column(name = "account_number")
+    String accountNumber;
 
+    @Column(name = "balance")
+    long balance;
+
+    @Column(name = "type")
+    String type;
+
+    @Column(name = "user_id")
+    long userId;
+}
