@@ -1,14 +1,11 @@
 package ru.kch.model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.experimental.FieldDefaults;
 
 @Setter
 @Getter
-@FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "products")
 public class Product {
@@ -16,17 +13,17 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Long id;
+    private Long id;
 
     @Column(name = "account_number")
-    String accountNumber;
+    private String accountNumber;
 
     @Column(name = "balance")
-    long balance;
+    private long balance;
 
     @Column(name = "type")
-    String type;
+    private String type;
 
     @Column(name = "user_id")
-    long userId;
+    private long userId;
 }
