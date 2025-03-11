@@ -7,7 +7,6 @@ import ru.kch.repository.ProductRepository;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.StreamSupport;
 
 @Service
 @RequiredArgsConstructor
@@ -16,7 +15,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> findAll() {
-        return StreamSupport.stream(productRepository.findAll().spliterator(), false).toList();
+        return productRepository.findAll();
     }
 
     @Override
