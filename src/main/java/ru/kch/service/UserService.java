@@ -1,6 +1,6 @@
 package ru.kch.service;
 
-import ru.kch.model.User;
+import ru.kch.model.entity.User;
 
 import java.util.List;
 import java.util.Optional;
