@@ -2,7 +2,8 @@ package ru.kch.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.kch.model.Product;
+import ru.kch.model.EntityToDtoProductMapper;
+import ru.kch.model.dto.ProductDto;
 import ru.kch.repository.ProductRepository;
 
 import java.util.List;
@@ -13,19 +14,25 @@ import java.util.Optional;
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
+    private final EntityToDtoProductMapper mapper;
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public List<ProductDto> findAll() {
+        return productRepository.findAll().stream()
+                .map(mapper::toDto)
+                .toList();
     }
 
     @Override
-    public List<Product> findByUserId(Long userId) {
-        return productRepository.findByUserId(userId);
+    public List<ProductDto> findByUserId(Long userId) {
+        return productRepository.findByUserId(userId).stream()
+                .map(mapper::toDto)
+                .toList();
     }
 
     @Override
-    public Optional<Product> findById(Long productId) {
-        return productRepository.findById(productId);
+    public Optional<ProductDto> findById(Long productId) {
+        return productRepository.findById(productId)
+                .map(mapper::toDto);
     }
 }

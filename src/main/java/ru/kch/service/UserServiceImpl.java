@@ -1,7 +1,7 @@
 package ru.kch.service;
 
 import org.springframework.stereotype.Service;
-import ru.kch.model.User;
+import ru.kch.model.entity.User;
 import ru.kch.repository.UserRepository;
 
 import java.util.List;

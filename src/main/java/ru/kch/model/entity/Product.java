@@ -1,4 +1,4 @@
-package ru.kch.model;
+package ru.kch.model.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
